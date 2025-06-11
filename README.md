@@ -52,7 +52,16 @@ This repository explains how to install the Whycon localisation system for robot
 2. Clone the repository: `git clone https://github.com/jiriUlr/whycode-gen.git`
 3. In the same terminal, go to the folder 'whycode-gen', and type: `make`, to compile.
 4. Open a new terminal and go to 'catkin_ws' and source it. Then, go to the 'whycon-gen' folder.
-5. Type this command to generate the tags: `./whycode_gen **bits_number**`
+5. Type this command: `./whycode_gen bits_number` to generate the tags in the same directory, where in the command:
+   a. If bits_number = 4, the generated tags are 3
+   b. If bits_number = 5, the generated tags are 6
+   c. If bits_number = 6, the generated tags are 9
+   d. If bits_number = 7, the generated tags are 18
+**((You can increase the bits_number to get more tags if needed))**
+
+
+## 5. Calibrate the Arena Dimensions:
+1. The Whycon system needs to be launched, and if you have a rectangular arena, four tags should be placed on the corners to be detected by the camera.
    
 
 
