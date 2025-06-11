@@ -7,9 +7,9 @@ This repository explains how to install the Whycon localisation system for robot
 3. Install Python 3.
 4. Install OpenCV: `sudo apt install libopencv-dev python3-opencv`
 5. Install 'usb_cam' package: `sudo apt-get install ros-noetic-usb-cam`
-6. In the terminal, go to 'catkin_ws' directory `cd catkin_ws`, and type: `catkin_make` to build the ROS.
+6. In the terminal, go to the 'catkin_ws' directory `cd catkin_ws`, and type: `catkin_make` to build the ROS.
 7. Do not forget to source ROS by typing in the terminal: `source devel/setup.bash`.
-8. Test 'usb_cam' package to make sure your camera is working fine by typing this: `roslaunch usb_cam usb_cam-test.launch`.
+8. Test the 'usb_cam' package to make sure your camera is working fine by typing this: `roslaunch usb_cam usb_cam-test.launch`.
 9. To find the 'usb_cam-test.launch' file, go to (Other Locations) in the Ubuntu system as shown in the image below:
 <img src="https://github.com/user-attachments/assets/45104c08-9cbb-4fc2-acf5-6adfacae6279" width="300" height="200">
 
@@ -21,7 +21,7 @@ This repository explains how to install the Whycon localisation system for robot
 13. If the camera works fine, go to the next step.
 
 ## 2. Camera Calibration:
-1. Download the chessboard paper (Checkerboard-A4-25mm-8x6.pdf) in this repository for calibration, in which the intersections between the black and white squares are 8 on the x-axis and 6 on the y-axis.
+1. Download the chessboard paper **(Checkerboard-A4-25mm-8x6.pdf)** in this repository for calibration, in which the intersections between the black and white squares are 8 on the x-axis and 6 on the y-axis.
 2. In one terminal, open the camera using the 'usb_cam' launch file.
 3. In another terminal, go to 'catkin_ws' and source it. Then, type this command: `rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108 image:=/usb_cam/image_raw camera:=/usb_cam`
 4. A grey-scale camera window will be shown, and you should show the (Chessboard paper) to the camera from different angles, and repeat this process until the 'calibrate' button is activated (in green colour).
@@ -35,6 +35,16 @@ This repository explains how to install the Whycon localisation system for robot
 2. git clone: `https://github.com/jiriUlr/whycon-ros.git`
 3. Type: `catkin_make` to build the directory.
 4. Change the folder name from 'whycon-ros' to 'whycon'.
+5. Go to the launch folder of 'whycon'. Open 'whycon-test.launch' file and modify it as follows:
+   a. In the first node, change from 'camera' to 'usb_cam' for both: image_raw & cam_info.
+   b. You can change the diameter value of the tag based on the printed tag you have. You can measure the diameter of the circle after you print it. It is measured by meter, so if the diameter of your tag is (8 cm), you can write 0.08.
+   c. Add <usb_cam> node from the 'usb_cam' original launch file to the whycon launch file.
+6. Run the launch file: `roslaunch whycon whycon-test2.launch`. A camera window should be opened, and by showing the tag, it can be detected.
+7. In the meantime, you can write in the terminal: `rostopic list` to see the currently activated topics.
+8. There is a topic called **(markers)** that gives us the position and orientation of the tags and also their IDs.
+9. You can type in the terminal: `rostopic echo /whycon/markers`. Then, you will see continuous data displayed in the terminal, which indicates all the information of the tags that are recognised by the camera.
+10. At this point, you can write a subscriber in Python or C++ to get these values and process them.
+11. It is very important when you run the 'whycon' launch file, we need to specify the number of bits that we used to generate the tags (It will be explained in the next section), e.g, `roslaunch whycon whycon.launch id_bits:= 7`. We do that to allow the Whycon system using the camera to detect the tags in the arena, and when we listen to the topic, the IDs of the tags will be shown in the terminal.
 
 
 
