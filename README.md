@@ -47,7 +47,10 @@ This repository explains how to install the Whycon localisation system for robot
 11. It is very important when you run the 'whycon' launch file, we need to specify the number of bits that we used to generate the tags (It will be explained in the next section), e.g, `roslaunch whycon whycon.launch id_bits:= 7`. We do that to allow the Whycon system using the camera to detect the tags in the arena, and when we listen to the topic, the IDs of the tags will be shown in the terminal.
 
 
-
+## 4. Generate the Whycon Tags:
+1. In a terminal, go to 'catkin_ws' then, 'src'.
+2. Clone the repository: `git clone https://github.com/jiriUlr/whycode-gen.git`
+3. In the terminal, go to the folder 'whycode-gen', and type: `make`, to compile.
    
 
 
