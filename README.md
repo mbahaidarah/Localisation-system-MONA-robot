@@ -7,7 +7,7 @@ This repository explains how to install the Whycon localisation system for robot
 3. Install Python 3.
 4. Install OpenCV: `sudo apt install libopencv-dev python3-opencv`
 5. Install 'usb_cam' package: `sudo apt-get install ros-noetic-usb-cam`
-6. In the terminal, go to 'catkin_ws' directory, and type: `catkin_make` to build the ROS.
+6. In the terminal, go to 'catkin_ws' directory `cd catkin_ws`, and type: `catkin_make` to build the ROS.
 7. Do not forget to source ROS by typing in the terminal: `source devel/setup.bash`.
 8. Test 'usb_cam' package to make sure your camera is working fine by typing this: `roslaunch usb_cam usb_cam-test.launch`.
 9. To find the 'usb_cam-test.launch' file, go to (Other Locations) in the Ubuntu system as shown in the image below:
@@ -31,7 +31,10 @@ This repository explains how to install the Whycon localisation system for robot
 
 
 ## 3. Whycon Localisation System with ROS:
-
+1. In the terminal, go to the 'src' folder > 'catkin_ws', then source it.
+2. git clone: `https://github.com/jiriUlr/whycon-ros.git`
+3. Type: `catkin_make` to build the directory.
+4. Change the folder name from 'whycon-ros' to 'whycon'.
 
 
 
