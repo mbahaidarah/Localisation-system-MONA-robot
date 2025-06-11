@@ -48,9 +48,11 @@ This repository explains how to install the Whycon localisation system for robot
 
 
 ## 4. Generate the Whycon Tags:
-1. In a terminal, go to 'catkin_ws' then, 'src'.
+1. In a terminal, go to 'catkin_ws' then, 'src' directory.
 2. Clone the repository: `git clone https://github.com/jiriUlr/whycode-gen.git`
-3. In the terminal, go to the folder 'whycode-gen', and type: `make`, to compile.
+3. In the same terminal, go to the folder 'whycode-gen', and type: `make`, to compile.
+4. Open a new terminal and go to 'catkin_ws' and source it. Then, go to the 'whycon-gen' folder.
+5. Type this command to generate the tags: `./whycode_gen **bits_number**`
    
 
 
