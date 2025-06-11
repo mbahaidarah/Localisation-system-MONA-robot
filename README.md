@@ -12,7 +12,7 @@ This repository explains how to install Whycon localisation system for robotics 
 8. Test 'usb_cam' package to make sure your camera is working fine by typing this: `roslaunch usb_cam usb_cam-test.launch`.
 
 ## Camera Calibration:
-1. Download the chessboard paper for calibration in which the intersections between the black and white squares are 8 on the x-axis and 6 on the y-axis.
+1. Download the chessboard paper (Checkerboard-A4-25mm-8x6.pdf) in this repository for calibration, in which the intersections between the black and white squares are 8 on the x-axis and 6 on the y-axis.
 
 
    
