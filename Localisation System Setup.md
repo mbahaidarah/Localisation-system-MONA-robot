@@ -1,6 +1,3 @@
-# Localisation-system-MONA-robot
-This repository explains how to install the Whycon localisation system for robotics experiments using (ROS noetic) and Ubuntu 20.04.
-
 ## 1. System Setup:
 1. Install Ubuntu 20.04.
 2. Install ROS Noetic from this [link](https://wiki.ros.org/noetic/Installation/Ubuntu).
